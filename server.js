@@ -43,7 +43,6 @@ app.use(session({
     },
     store: MongoStore.create({
         mongoUrl: `mongodb+srv://${process.env.username}:${process.env.password}@cluster0.owyjx.mongodb.net/mernstack?retryWrites=true&w=majority`,
-        // mongoUrl: `mongodb+srv://mappy:LYwFPd49zv2IR2ZT@cluster0.owyjx.mongodb.net/mernstack?retryWrites=true&w=majority`,
         autoRemove: 'disabled'
     },
         function (err) {
@@ -60,9 +59,6 @@ app.use(passport.setAuthenticatedUser);
 // use express router
 app.use('/', require('./routes'));
 
-// app.listen(port, () => {
-//     console.log('app is running on port 3000');
-// })
 app.listen(process.env.PORT || 3000, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
