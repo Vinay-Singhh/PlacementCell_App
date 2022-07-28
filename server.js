@@ -2,7 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
 require('dotenv').config();
 
@@ -59,6 +59,9 @@ app.use(passport.setAuthenticatedUser);
 // use express router
 app.use('/', require('./routes'));
 
-app.listen(port, () => {
-    console.log('app is running on port 3000');
-})
+// app.listen(port, () => {
+//     console.log('app is running on port 3000');
+// })
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
