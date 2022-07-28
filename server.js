@@ -42,7 +42,8 @@ app.use(session({
         maxAge: (1000 * 60 * 100),
     },
     store: MongoStore.create({
-        mongoUrl: `mongodb+srv://${process.env.username}:${process.env.password}@cluster0.owyjx.mongodb.net/mernstack?retryWrites=true&w=majority`,
+        // mongoUrl: `mongodb+srv://${process.env.username}:${process.env.password}@cluster0.owyjx.mongodb.net/mernstack?retryWrites=true&w=majority`,
+        mongoUrl: `mongodb+srv://mappy:LYwFPd49zv2IR2ZT@cluster0.owyjx.mongodb.net/mernstack?retryWrites=true&w=majority`,
         autoRemove: 'disabled'
     },
         function (err) {
