@@ -12,9 +12,9 @@ How many students have shown interest in their oppurtunity?
 Download combined data of all the students.
 The App is hosted on Heroku
 
-##Libraries Used:
--expressjs layout: it is managing the frontend of this App.
--Nodejs: takes care of all the backend actions taking place.
--MongoDB: Managing all the data of this App.
--Passportjs: Managing authentication of this application.
--json2csv: Converts json into csv with column titles and proper line endings.
+## Libraries Used:
+- expressjs-layout: it is managing the frontend of this App.
+- Nodejs: takes care of all the backend actions taking place.
+- MongoDB: Managing all the data of this App.
+- Passportjs: Managing authentication of this application.
+- json2csv: Converts json into csv with column titles and proper line endings.
