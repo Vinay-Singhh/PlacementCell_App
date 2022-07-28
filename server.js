@@ -46,7 +46,7 @@ app.use(session({
         autoRemove: 'disabled'
     },
         function (err) {
-            console.log(err || 'connect-mongodb setup ok');
+            console.log(err || 'connect-mongodb  setup ok');
         }
     )
 }));
