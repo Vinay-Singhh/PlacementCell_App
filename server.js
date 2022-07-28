@@ -4,6 +4,8 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
+require('dotenv').config();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
@@ -26,24 +28,24 @@ const MongoStore = require('connect-mongo');
 
 // set up the view engine
 // app.set('views', path.join(__dirname, 'views'));
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 app.set('views', './views');
 
 // mongo store is used to store the session cookie in the db
 app.use(session({
     name: 'npm',
     // TODO change the secret before deployment in the production mode
-    secret: 'secretkey',
+    secret: process.env.SECRET_KEY,
     saveUninitialized: false,
     resave: false,
-    cookie:{
-        maxAge: (1000 * 60 * 100)
+    cookie: {
+        maxAge: (1000 * 60 * 100),
     },
     store: MongoStore.create({
-            mongoUrl: 'mongodb://localhost:27017/placements_db',
-            autoRemove: 'disabled'
-        },
-        function(err){
+        mongoUrl: `mongodb+srv://${process.env.username}:${process.env.password}@cluster0.owyjx.mongodb.net/mernstack?retryWrites=true&w=majority`,
+        autoRemove: 'disabled'
+    },
+        function (err) {
             console.log(err || 'connect-mongodb setup ok');
         }
     )
