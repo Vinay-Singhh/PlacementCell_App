@@ -1,57 +1,58 @@
-<div class="container mt-4">
-    <div class="row g-5">
-        <div class="col-md-6 col-lg-6 order-md-last ">
-            <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-black">List of Students</span>
-            </h4>
-            <table class="table table-bordered  mb-3">
+<% if(locals.user){ %>
+    <div class="container mt-4">
+        <div class="row g-5">
+            <div class="col-md-6 col-lg-6 order-md-last ">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-black">List of Students</span>
+                </h4>
+                <table class="table table-bordered  mb-3">
 
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>College</th>
-                        <th>Status</th>
-                        <th>Batch</th>
-                        <th>DSA</th>
-                        <th>Web</th>
-                        <th>React</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% for (each of students) { %>
+                    <thead>
                         <tr>
-                            <td>
-                                <%= each.name %>
-                            </td>
-                            <td>
-                                <%= each.email %>
-                            </td>
-                            <td>
-                                <%= each.college %>
-                            </td>
-                            <td>
-                                <%= each.placement_status %>
-                            </td>
-                            <td>
-                                <%= each.batch %>
-                            </td>
-                            <td>
-                                <%= each.dsa_score %>
-                            </td>
-                            <td>
-                                <%= each.webD_score %>
-                            </td>
-                            <td>
-                                <%= each.react_score %>
-                            </td>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>College</th>
+                            <th>Status</th>
+                            <th>Batch</th>
+                            <th>DSA</th>
+                            <th>Web</th>
+                            <th>React</th>
                         </tr>
+                    </thead>
+                    <tbody>
+                        <% for (each of students) { %>
+                            <tr>
+                                <td>
+                                    <%= each.name %>
+                                </td>
+                                <td>
+                                    <%= each.email %>
+                                </td>
+                                <td>
+                                    <%= each.college %>
+                                </td>
+                                <td>
+                                    <%= each.placement_status %>
+                                </td>
+                                <td>
+                                    <%= each.batch %>
+                                </td>
+                                <td>
+                                    <%= each.dsa_score %>
+                                </td>
+                                <td>
+                                    <%= each.webD_score %>
+                                </td>
+                                <td>
+                                    <%= each.react_score %>
+                                </td>
+                            </tr>
 
-                        <% } %>
-                </tbody>
-            </table>
-        </div>
-        <% if(locals.user){ %>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+
             <div class="col-md-6 col-lg-6 ">
                 <h4 class="mb-3">New Student Form</h4>
                 <form class="needs-validation" method="post" action="../students/create">
@@ -104,6 +105,6 @@
                     <button class="w-100 btn btn-primary btn-lg" type="submit">Add New Student</button>
                 </form>
             </div>
-            <% } %>
+        </div>
     </div>
-</div>
+<% } %>
