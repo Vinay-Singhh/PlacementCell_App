@@ -35,15 +35,15 @@ app.set('views', './views');
 app.use(session({
     name: 'npm',
     // TODO change the secret before deployment in the production mode
-    secret: 'something',
+    secret: process.env.SECRET_KEY,
     saveUninitialized: false,
     resave: false,
     cookie: {
         maxAge: (1000 * 60 * 100),
     },
     store: MongoStore.create({
-        // mongoUrl: `mongodb+srv://${process.env.username}:${process.env.password}@cluster0.owyjx.mongodb.net/mernstack?retryWrites=true&w=majority`,
-        mongoUrl: `mongodb+srv://mappy:LYwFPd49zv2IR2ZT@cluster0.owyjx.mongodb.net/mernstack?retryWrites=true&w=majority`,
+        mongoUrl: `mongodb+srv://${process.env.username}:${process.env.password}@cluster0.owyjx.mongodb.net/mernstack?retryWrites=true&w=majority`,
+        // mongoUrl: `mongodb+srv://mappy:LYwFPd49zv2IR2ZT@cluster0.owyjx.mongodb.net/mernstack?retryWrites=true&w=majority`,
         autoRemove: 'disabled'
     },
         function (err) {
