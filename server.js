@@ -16,7 +16,7 @@ app.use(expressLayouts);
 
 // extract style and scripts from sub pages into the layout
 app.set('layout extractStyles', true);
-app.set('layo ut extractScripts', true);
+app.set('layout extractScripts', true);
 
 const db = require('./config/mongoose');
 
@@ -35,7 +35,7 @@ app.set('views', './views');
 app.use(session({
     name: 'npm',
     // TODO change the secret before deployment in the production mode
-    secret: process.env.SECRET_KEY,
+    secret: 'something',
     saveUninitialized: false,
     resave: false,
     cookie: {
