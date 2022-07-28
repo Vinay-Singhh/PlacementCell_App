@@ -2,6 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -32,7 +33,7 @@ app.set('views', './views');
 app.use(session({
     name: 'npm',
     // TODO change the secret before deployment in the production mode
-    secret: 'blahsomething',
+    secret: 'secretkey',
     saveUninitialized: false,
     resave: false,
     cookie:{
@@ -56,25 +57,6 @@ app.use(passport.setAuthenticatedUser);
 // use express router
 app.use('/', require('./routes'));
 
-// app.post('/enter-details', function(req, res){
-//     console.log(req.body);
-//     Kitten.create({
-//         batch: req.body.batch,
-//         college: req.body.college,
-//         dsa_score: req.body.dsa_score,
-//         webD_score: req.body.webD_score,
-//         react_score : req.body.react_score,
-//         company_name: req.body.company_name
-//     }, function(err, newDetails){
-//         if(err){
-//             console.log('error in entering details..');
-//             return;
-//         }
-//         console.log('********', newDetails);
-//         return res.redirect('back');
-//     });
-// });
-
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('app is running on port 3000');
 })
