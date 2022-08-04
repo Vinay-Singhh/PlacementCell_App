@@ -1,16 +1,16 @@
 # PlacementCell Application
 
+The App is hosted on Heroku
 ## [Project Link](https://placementcell-app.herokuapp.com)
 
 This is a placement cell project meant to manage the status of many students
 
-Keep an eyes on who is interested in which job.
+Keep an eye on who is interested in which job. 
 What is the result of the placement processes they are participating in?
-How many jobs they have showed their interests in?
-Which new company is posting a job oppurtunity on your platform?
-How many students have shown interest in their oppurtunity?
+How many jobs have they shown their interest in? 
+Which new company is posting a job opportunity on your platform? 
+How many students have shown interest in their opportunities?
 Download combined data of all the students.
-The App is hosted on Heroku
 
 ## Libraries Used:
 - expressjs-layout: it is managing the frontend of this App.
