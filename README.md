@@ -1,7 +1,7 @@
 # PlacementCell Application
 
 The App is hosted on Heroku
-## [Project Link](https://placementcell-app.herokuapp.com)
+## [Project Link](https://placementcell-app-w6wt.onrender.com)
 ## Description
 This is a placement cell project meant to manage the status of many students
 
